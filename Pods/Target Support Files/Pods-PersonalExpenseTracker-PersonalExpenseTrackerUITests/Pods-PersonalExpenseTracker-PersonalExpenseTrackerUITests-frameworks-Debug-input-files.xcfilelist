@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-PersonalExpenseTracker-PersonalExpenseTrackerUITests/Pods-PersonalExpenseTracker-PersonalExpenseTrackerUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
+${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework
+${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework
