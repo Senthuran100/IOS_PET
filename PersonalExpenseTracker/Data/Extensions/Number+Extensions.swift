@@ -18,10 +18,6 @@ extension Double {
         return String(format: "%\(formatString)f", self)
     }
 
-    var clean: String {
-        return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
-    }
-
     func recordPresenter(for type: RecordType, preciseDecimal: Int = 2, formatting: Bool = true) -> String {
         var prefix = ""
         if type == .all {
@@ -46,6 +42,10 @@ extension Double {
         } else {
             return "\(prefix) \(NSLocale.defaultCurrency) \(formatter.string(from: NSNumber(value: absValue))!)"
         }
+    }
+    
+    var clean: String {
+        return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
     }
 }
 

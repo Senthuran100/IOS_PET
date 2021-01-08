@@ -346,11 +346,11 @@
 			isa = PBXGroup;
 			children = (
 				64DE8A2F258F5E3A003E3486 /* Date+extensions.swift */,
-				64DE8A37258F5E4F003E3486 /* DateFormatter+Extensions.swift */,
 				64DE8A3C258F5E60003E3486 /* Number+Extensions.swift */,
 				64DE8A41258F5E73003E3486 /* String+Extensions.swift */,
 				64DE8A46258F5E84003E3486 /* NSLocale+Extensions.swift */,
 				64DE8A4B258F5E95003E3486 /* UserDefaults+Extensions.swift */,
+				64DE8A37258F5E4F003E3486 /* DateFormatter+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

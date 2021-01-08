@@ -1,5 +1,5 @@
 //
-//  SWCategoryData.swift
+//  PETCategoryData.swift
 //  PersonalExpenseTracker
 //
 //  Created by Senthuran on 12/20/20.
@@ -31,10 +31,10 @@ struct PETCategoryData {
 extension PETCategoryData {
 
     static var list: [PETCategoryData] {
-        return PETCategoryData.expenseList + PETCategoryData.incomeList
+        return PETCategoryData.listOFExpenses + PETCategoryData.listOFIncomes
     }
 
-    static let expenseList: [PETCategoryData] = [
+    static let listOFExpenses: [PETCategoryData] = [
         PETCategoryData(
             title: "Foods & Drinks",
             identifier: "cat_expense_foods",
@@ -109,7 +109,7 @@ extension PETCategoryData {
         )
     ]
 
-    static let incomeList: [PETCategoryData] = [
+    static let listOFIncomes: [PETCategoryData] = [
         PETCategoryData(
             title: "Salary",
             identifier: "cat_income_salary",

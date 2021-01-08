@@ -32,7 +32,7 @@ class AddCategoryViewController: UIViewController {
     var currentIcon: FontAwesome? {
         didSet {
             guard let currentIcon = currentIcon else { return }
-            self.iconView?.image = UIImage.SWFontIcon(name: currentIcon)
+            self.iconView?.image = UIImage.PETFontIcon(name: currentIcon)
         }
     }
 

@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = Facade.share
        // Fabric.with([Crashlytics.self])
         
-        StoreReviewHelper.incrementAppOpenedCount()
+//        StoreReviewHelper.incrementAppOpenedCount()
         self.afterUpdateProcess()
 
         return true

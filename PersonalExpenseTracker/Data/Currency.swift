@@ -15,7 +15,7 @@ class Currency {
     var currencyName: String?
     var currencySymbol: String?
 
-    func loadEveryCountryWithCurrency() -> [Currency] {
+    func getCurrencyCodeForCountry() -> [Currency] {
         var result = [Currency]()
         let currencies = Locale.commonISOCurrencyCodes
 

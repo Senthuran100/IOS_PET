@@ -1,5 +1,5 @@
 //
-//  AddRecordViewController.swift
+//  AddTransactionController.swift
 //  PersonalExpenseTracker
 //
 //  Created by Senthuran on 12/20/20.
@@ -30,8 +30,6 @@ class AddTransactionController: UIViewController, UIPickerViewDataSource, UIPick
     var model: AddRecordModel = Facade.share.model.addRecordModel
     var record: Records!
 
-    // swiftlint:disable function_body_length
-    // should be splitted into smaller functions
     override func viewDidLoad() {
         super.viewDidLoad()
 

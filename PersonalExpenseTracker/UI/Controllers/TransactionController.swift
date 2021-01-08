@@ -71,7 +71,7 @@ class TransactionController: UITableViewController, NSFetchedResultsControllerDe
         }
         
         let headerView = SWRecordHeaderView()
-        headerView.setup(with: SWRecordHeaderViewModel(
+        headerView.setup(with: PETRecordHeaderViewModel(
                             title: topRecord.datetime!.dayRepresentation(),
             spending: records.sum().value.recordPresenter(
                 for: .all,
@@ -91,7 +91,7 @@ class TransactionController: UITableViewController, NSFetchedResultsControllerDe
             cell.amountLabel.textColor = UIColor.myAppGreen
             cell.amountLabel.text = record.amount.recordPresenter(for: .income, formatting: false)
         } else {
-            cell.amountLabel.textColor = UIColor.myAppBlack
+            cell.amountLabel.textColor = UIColor.myAppRed
             cell.amountLabel.text = record.amount.recordPresenter(for: .cost, formatting: false)
         }
 //        cell.icon.image = record.relatedCategory!.iconImage()

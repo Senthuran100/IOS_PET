@@ -75,7 +75,7 @@ class PersistentModel {
     }
 
     private func setCurrencyCodeDefault() {
-        let currencyList = Currency().loadEveryCountryWithCurrency()
+        let currencyList = Currency().getCurrencyCodeForCountry()
         let systemSymbol = NSLocale.current.currencySymbol ?? ""
 
         var symbol = "£"

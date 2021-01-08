@@ -21,12 +21,12 @@ class ReportModel {
         let totalBudget = model.calculateTotalBudget()
 
         return monthYearList.compactMap {
-            let numDays = Date.getMonthDuration(
+            let numDays = Date.getDurationOfMonth(
                 year: $0.year,
                 month: $0.month,
                 considerCurrent: true
             )
-            let numDaysAll = Date.getMonthDuration(
+            let numDaysAll = Date.getDurationOfMonth(
                 year: $0.year,
                 month: $0.month,
                 considerCurrent: false

@@ -22,24 +22,24 @@ class MainTabController: UITabBarController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.showSplashScreen()
+//        self.showSplashScreen()
     }
 
-    private func showSplashScreen() {
-        guard UserDefaults.standard.bool(forKey: "introduced") == false ||
-            PETAppConfig.isSnapshot else {
-                return
-        }
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let splashVC = storyboard.instantiateViewController(
-            withIdentifier: "splashController"
-            ) as? SplashViewController else {
-            return
-        }
-        if PETAppConfig.isSnapshot {
-            Facade.share.model.addSampleData()
-        }
-        present(splashVC, animated: false)
-    }
+//    private func showSplashScreen() {
+//        guard UserDefaults.standard.bool(forKey: "introduced") == false ||
+//            PETAppConfig.isSnapshot else {
+//                return
+//        }
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        guard let splashVC = storyboard.instantiateViewController(
+//            withIdentifier: "splashController"
+//            ) as? SplashViewController else {
+//            return
+//        }
+//        if PETAppConfig.isSnapshot {
+//            Facade.share.model.addSampleData()
+//        }
+//        present(splashVC, animated: false)
+//    }
 }
 

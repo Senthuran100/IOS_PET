@@ -16,7 +16,7 @@ class SelectCurrecncyController: UITableViewController {
         super.viewDidLoad()
 
         let currecy = Currency()
-        currencyList = currecy.loadEveryCountryWithCurrency()
+        currencyList = currecy.getCurrencyCodeForCountry()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

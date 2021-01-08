@@ -1,5 +1,5 @@
 //
-//  SWIconSelectorViewController.swift
+//  PETIconSelectorViewController.swift
 //  PersonalExpenseTracker
 //
 //  Created by Senthuran on 12/20/20.
@@ -16,8 +16,8 @@ class PETIconSelectorController: UIViewController {
     @IBOutlet weak var iconCollectionView: UICollectionView!
     weak var delegate: IconSelectorDelegate?
 
-    let fontStyle = SWIconConfig.style
-    let fontColor = SWIconConfig.color
+    let fontStyle = PETIconConfig.style
+    let fontColor = PETIconConfig.color
     lazy var fontList = FontAwesome.fontList(style: self.fontStyle)
 
     let selectedColor = UIColor.green.withAlphaComponent(0.1)

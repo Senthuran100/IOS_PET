@@ -1,5 +1,5 @@
 //
-//  SWIconCollectionCell.swift
+//  PETIconCollectionCell.swift
 //  PersonalExpenseTracker
 //
 //  Created by Senthuran on 12/20/20.

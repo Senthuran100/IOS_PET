@@ -64,14 +64,14 @@ extension Date {
         return month
     }
 
-    func year() -> Int {
-        let year = Calendar.current.component(.year, from: self)
-        return year
-    }
-
     func day() -> Int {
         let day = Calendar.current.component(.day, from: self)
         return day
+    }
+    
+    func year() -> Int {
+        let year = Calendar.current.component(.year, from: self)
+        return year
     }
 
     func startOfMonth() -> Date {
@@ -93,7 +93,7 @@ extension Date {
         return dateFormatter.date(from: dateString)!
     }
 
-    static func getMonthDuration(year: Int,
+    static func getDurationOfMonth(year: Int,
                           month: Int,
                           considerCurrent: Bool,
                           currentDate: Date = Date()) -> Int {

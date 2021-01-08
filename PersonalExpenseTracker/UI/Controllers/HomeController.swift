@@ -45,7 +45,7 @@ class HomeController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        StoreReviewHelper.checkAndAskForReview()
+//        StoreReviewHelper.checkAndAskForReview()
 
         configureSegmentedView()
         totalBudget = Facade.share.model.calculateTotalBudget()
@@ -73,7 +73,8 @@ class HomeController: UITableViewController {
         lineChartView?.xAxis.granularity = 1
 
         lineChartView?.legend.form = .line
-
+        
+        lineChartView?.backgroundColor = UIColor.lightGray
         lineChartView?.animate(yAxisDuration: 0.3)
 
         if let lineChartView = lineChartView {
@@ -97,9 +98,9 @@ class HomeController: UITableViewController {
     }
 
     private func provideLineData(type: PETRepresentationType) -> LineChartDataSet {
-        var mainColor: UIColor = .black
+        var mainColor: UIColor = .red
         var gradientFirstColor: UIColor = .clear
-        var gradientSecondColor: UIColor = .black
+        var gradientSecondColor: UIColor = .red
         if type == .totalIncome {
             mainColor = .myAppGreen
             gradientFirstColor = .clear
@@ -167,8 +168,8 @@ class HomeController: UITableViewController {
     func calculateOveralInfo() {
         overalInfo.removeAll()
 
-        let numDays = Date.getMonthDuration(year: currentYear, month: currentMonth, considerCurrent: true)
-        let numDaysAll =  Date.getMonthDuration(year: currentYear, month: currentMonth, considerCurrent: false)
+        let numDays = Date.getDurationOfMonth(year: currentYear, month: currentMonth, considerCurrent: true)
+        let numDaysAll =  Date.getDurationOfMonth(year: currentYear, month: currentMonth, considerCurrent: false)
 
         let monthlyTotalCost = Facade.share.model.retrieveTotalMonth(year: currentYear, month: currentMonth, type: .cost)
         let dailyAverageCost = monthlyTotalCost / Double(numDays)
