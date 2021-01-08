@@ -47,13 +47,13 @@
 		64DE89FD258F2915003E3486 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64DE89F9258F2915003E3486 /* Font Awesome 5 Free-Solid-900.otf */; };
 		64DE89FE258F2915003E3486 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64DE89FA258F2915003E3486 /* Font Awesome 5 Free-Regular-400.otf */; };
 		64DE8A07258F5CED003E3486 /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A06258F5CED003E3486 /* ReportModel.swift */; };
-		64DE8A0C258F5D00003E3486 /* SWMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A0B258F5D00003E3486 /* SWMonth.swift */; };
+		64DE8A0C258F5D00003E3486 /* PETMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A0B258F5D00003E3486 /* PETMonth.swift */; };
 		64DE8A11258F5D12003E3486 /* StoreReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A10258F5D12003E3486 /* StoreReviewHelper.swift */; };
 		64DE8A16258F5D23003E3486 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A15258F5D23003E3486 /* Currency.swift */; };
 		64DE8A1B258F5D33003E3486 /* AddModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A1A258F5D33003E3486 /* AddModel.swift */; };
-		64DE8A20258F5D44003E3486 /* SWAppStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A1F258F5D44003E3486 /* SWAppStatus.swift */; };
+		64DE8A20258F5D44003E3486 /* PETAppStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A1F258F5D44003E3486 /* PETAppStatus.swift */; };
 		64DE8A25258F5D59003E3486 /* PETCategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A24258F5D59003E3486 /* PETCategoryData.swift */; };
-		64DE8A2A258F5D6B003E3486 /* SWAppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A29258F5D6B003E3486 /* SWAppConfig.swift */; };
+		64DE8A2A258F5D6B003E3486 /* PETAppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A29258F5D6B003E3486 /* PETAppConfig.swift */; };
 		64DE8A30258F5E3A003E3486 /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A2F258F5E3A003E3486 /* Date+extensions.swift */; };
 		64DE8A38258F5E4F003E3486 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A37258F5E4F003E3486 /* DateFormatter+Extensions.swift */; };
 		64DE8A3D258F5E60003E3486 /* Number+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A3C258F5E60003E3486 /* Number+Extensions.swift */; };
@@ -135,13 +135,13 @@
 		64DE89F9258F2915003E3486 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
 		64DE89FA258F2915003E3486 /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		64DE8A06258F5CED003E3486 /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
-		64DE8A0B258F5D00003E3486 /* SWMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMonth.swift; sourceTree = "<group>"; };
+		64DE8A0B258F5D00003E3486 /* PETMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETMonth.swift; sourceTree = "<group>"; };
 		64DE8A10258F5D12003E3486 /* StoreReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewHelper.swift; sourceTree = "<group>"; };
 		64DE8A15258F5D23003E3486 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		64DE8A1A258F5D33003E3486 /* AddModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModel.swift; sourceTree = "<group>"; };
-		64DE8A1F258F5D44003E3486 /* SWAppStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAppStatus.swift; sourceTree = "<group>"; };
+		64DE8A1F258F5D44003E3486 /* PETAppStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETAppStatus.swift; sourceTree = "<group>"; };
 		64DE8A24258F5D59003E3486 /* PETCategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETCategoryData.swift; sourceTree = "<group>"; };
-		64DE8A29258F5D6B003E3486 /* SWAppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAppConfig.swift; sourceTree = "<group>"; };
+		64DE8A29258F5D6B003E3486 /* PETAppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETAppConfig.swift; sourceTree = "<group>"; };
 		64DE8A2F258F5E3A003E3486 /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
 		64DE8A37258F5E4F003E3486 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		64DE8A3C258F5E60003E3486 /* Number+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Extensions.swift"; sourceTree = "<group>"; };
@@ -331,13 +331,13 @@
 				64DE8A50258F5F25003E3486 /* Model */,
 				64DE8A2E258F5E1F003E3486 /* Extensions */,
 				64DE8A06258F5CED003E3486 /* ReportModel.swift */,
-				64DE8A0B258F5D00003E3486 /* SWMonth.swift */,
+				64DE8A0B258F5D00003E3486 /* PETMonth.swift */,
 				64DE8A10258F5D12003E3486 /* StoreReviewHelper.swift */,
 				64DE8A15258F5D23003E3486 /* Currency.swift */,
 				64DE8A1A258F5D33003E3486 /* AddModel.swift */,
-				64DE8A1F258F5D44003E3486 /* SWAppStatus.swift */,
+				64DE8A1F258F5D44003E3486 /* PETAppStatus.swift */,
 				64DE8A24258F5D59003E3486 /* PETCategoryData.swift */,
-				64DE8A29258F5D6B003E3486 /* SWAppConfig.swift */,
+				64DE8A29258F5D6B003E3486 /* PETAppConfig.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -642,9 +642,9 @@
 				64DE896A258F1FA1003E3486 /* CategoryController.swift in Sources */,
 				64DE8974258F1FC8003E3486 /* SelectCurrecncyController.swift in Sources */,
 				64DE8A78258F5FD6003E3486 /* CategoriesExtensions.swift in Sources */,
-				64DE8A0C258F5D00003E3486 /* SWMonth.swift in Sources */,
+				64DE8A0C258F5D00003E3486 /* PETMonth.swift in Sources */,
 				64DE8965258F1F8F003E3486 /* SettingController.swift in Sources */,
-				64DE8A2A258F5D6B003E3486 /* SWAppConfig.swift in Sources */,
+				64DE8A2A258F5D6B003E3486 /* PETAppConfig.swift in Sources */,
 				64DE8A73258F5FC4003E3486 /* PersistentModel.swift in Sources */,
 				64DE8A11258F5D12003E3486 /* StoreReviewHelper.swift in Sources */,
 				64DE8A7D258F5FE6003E3486 /* RecordsExtensions.swift in Sources */,
@@ -656,7 +656,7 @@
 				64DE89E6258F286F003E3486 /* BudgetTableCell.swift in Sources */,
 				64DE8ACE258F69BB003E3486 /* Extensions.swift in Sources */,
 				64DE890C258F093F003E3486 /* ViewController.swift in Sources */,
-				64DE8A20258F5D44003E3486 /* SWAppStatus.swift in Sources */,
+				64DE8A20258F5D44003E3486 /* PETAppStatus.swift in Sources */,
 				64DE8A42258F5E73003E3486 /* String+Extensions.swift in Sources */,
 				64DE89EB258F2889003E3486 /* PETCategoryTableCell.swift in Sources */,
 				64DE8A38258F5E4F003E3486 /* DateFormatter+Extensions.swift in Sources */,

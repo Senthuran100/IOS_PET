@@ -19,7 +19,7 @@ class PersistentModel {
     init() {
         addRecordModel = AddRecordModel()
 
-        // initialise core data
+        // Initializing from the core data.
         container = NSPersistentContainer(name: "PersonalExpenseTracker")
 
         container.loadPersistentStores { (_, error) in
@@ -32,22 +32,22 @@ class PersistentModel {
 
         print(NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).last! as String)
 
-        importInitialData()
+        renderInitialData()
     }
 
-    func importInitialData() {
+    func renderInitialData() {
         do {
             let fetchRequest: NSFetchRequest<Accounts> = Accounts.createFetchRequest()
             let result = try container.viewContext.fetch(fetchRequest)
 
-            // luncdhing data initialisation
+            // launching the initial data rendering
             if result.count == 0 {
-                // add a default account
+                // default account adding.
                 let account = Accounts(context: self.container.viewContext)
                 account.currency = "£"
                 account.initial = 0
                 account.name = "Default Account"
-                account.uid = getNewUID()
+                account.uid = getUID()
 
                 saveContext()
 
@@ -58,7 +58,7 @@ class PersistentModel {
                     category.generalId = item.identifier
                     category.icon = item.icon
                     category.parent = ""
-                    category.uid = getNewUID()
+                    category.uid = getUID()
                     saveContext()
                     category.sortId = category.getAutoIncremenet()
                     saveContext()
@@ -66,15 +66,15 @@ class PersistentModel {
 
                 saveContext()
 
-                self.setupDefaultCurrency()
+                self.setCurrencyCodeDefault()
             }
         } catch {
-            print ("fetch task failed", error)
+            print ("Fetching Data Failed", error)
         }
 
     }
 
-    private func setupDefaultCurrency() {
+    private func setCurrencyCodeDefault() {
         let currencyList = Currency().loadEveryCountryWithCurrency()
         let systemSymbol = NSLocale.current.currencySymbol ?? ""
 
@@ -82,10 +82,10 @@ class PersistentModel {
         if currencyList.contains(where: { $0.currencySymbol == systemSymbol }) {
             symbol = systemSymbol
         }
-        NSLocale.setupDefaultCurrency(symbol: symbol)
+        NSLocale.setCurrencyCodeDefault(symbol: symbol)
     }
 
-    func getMinMaxDateInRecords() -> (min: Date, max: Date) {
+    func retrieveMinMaxDateInRecords() -> (min: Date, max: Date) {
         do {
             let fetchRequest: NSFetchRequest<Records> = Records.createFetchRequest()
             let sort = NSSortDescriptor(key: "datetime", ascending: true)
@@ -112,7 +112,7 @@ class PersistentModel {
         return amount ?? 0.0
     }
 
-    func getNumberOfRecordsInCategory(uid: String) -> Int {
+    func retrieveNumberOfRecordsInCategory(uid: String) -> Int {
         do {
             let fetchRequest: NSFetchRequest<Records> = Records.createFetchRequest()
             fetchRequest.predicate = NSPredicate(format: "relatedCategory.uid = %@", uid)
@@ -120,12 +120,11 @@ class PersistentModel {
             return result.count
         } catch {
             print(error.localizedDescription)
-
             return 0
         }
     }
 
-    func getOrCreateRecord(uid: String) -> Records {
+    func addOrGetRecord(uid: String) -> Records {
         guard uid != "" else {
             return Records(context: container.viewContext)
         }
@@ -143,7 +142,7 @@ class PersistentModel {
         return record ?? Records(context: container.viewContext)
     }
 
-    func getRecord(uid: String) -> Records? {
+    func fetchRecord(uid: String) -> Records? {
         guard uid != "" else {
             return nil
         }
@@ -161,7 +160,7 @@ class PersistentModel {
         return nil
     }
 
-    func getOrCreateCategory(uid: String) -> Categories {
+    func addOrGetCategory(uid: String) -> Categories {
         guard uid != "" else {
             return Categories(context: container.viewContext)
         }
@@ -179,7 +178,7 @@ class PersistentModel {
         return record ?? Categories(context: container.viewContext)
     }
 
-    func changeCategoryOrdering(_ category: Categories, newSortId: Int64) {
+    func alterCategoryOrder(_ category: Categories, newSortId: Int64) {
         guard newSortId != category.sortId else {
             return
         }
@@ -232,7 +231,7 @@ class PersistentModel {
         saveContext()
     }
 
-    func getTotalMonth(year: Int, month: Int, type: RecordType) -> Double {
+    func retrieveTotalMonth(year: Int, month: Int, type: RecordType) -> Double {
         do {
             let fetchRequest: NSFetchRequest<Records> = Records.createFetchRequest()
 
@@ -254,11 +253,7 @@ class PersistentModel {
         return 0
     }
 
-    func getNewUID() -> String {
-        return String(Date().timeIntervalSince1970.format(formatString: ".5"))
-    }
-
-    func getMonthlyTotalByCategory(year: Int, month: Int, type: RecordType) -> [(amount: Double, category: Categories)] {
+    func groupCategoryByMonthlyTotal(year: Int, month: Int, type: RecordType) -> [(amount: Double, category: Categories)] {
         var output = [(amount: Double, category: Categories)]()
         do {
             let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "Records")
@@ -306,8 +301,12 @@ class PersistentModel {
 
         return output
     }
+    
+    func getUID() -> String {
+        return String(Date().timeIntervalSince1970.format(formatString: ".5"))
+    }
 
-    func getTotalBudget() -> Double {
+    func calculateTotalBudget() -> Double {
 
         var amountTotal: Double = 0
 
@@ -425,12 +424,12 @@ class PersistentModel {
             do {
                 try container.viewContext.save()
             } catch {
-                print("An error occurred while saving: \(error)")
+                print("Error while saving: \(error)")
             }
         }
     }
 
-    func purgeAllData() {
+    func fetchAllData() {
         let uniqueNames = container.managedObjectModel.entities.compactMap({ $0.name })
 
         uniqueNames.forEach { (name) in

@@ -45,7 +45,7 @@ class SelectCurrecncyController: UITableViewController {
         let currencyItem = currencyList[indexPath.row]
 
         if let symbol = currencyItem.currencySymbol {
-            NSLocale.setupDefaultCurrency(symbol: symbol)
+            NSLocale.setCurrencyCodeDefault(symbol: symbol)
         }
 
         navigationController?.popViewController(animated: true)

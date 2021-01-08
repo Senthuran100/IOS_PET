@@ -12,7 +12,7 @@ extension NSLocale {
         return UserDefaults.standard.string(forKey: UserDefaults.currencySymbolKey) ?? ""
     }
 
-    static func setupDefaultCurrency(symbol: String) {
+    static func setCurrencyCodeDefault(symbol: String) {
         UserDefaults.standard.set(symbol, forKey: UserDefaults.currencySymbolKey)
     }
 }

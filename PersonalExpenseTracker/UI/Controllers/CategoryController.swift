@@ -229,7 +229,7 @@ extension CategoryController {
         if editingStyle == .delete {
             let category = fetchedResultsController.object(at: indexPath)
 
-            if Facade.share.model.getNumberOfRecordsInCategory(uid: category.uid!) == 0 {
+            if Facade.share.model.retrieveNumberOfRecordsInCategory(uid: category.uid!) == 0 {
 
                 Facade.share.model.container.viewContext.delete(category)
                 Facade.share.model.saveContext()
@@ -264,7 +264,7 @@ extension CategoryController {
         let category = fetchedResultsController.object(at: sourceIndexPath)
         let newSortId = fetchedResultsController.object(at: destinationIndexPath).sortId
 
-        Facade.share.model.changeCategoryOrdering(category, newSortId: newSortId)
+        Facade.share.model.alterCategoryOrder(category, newSortId: newSortId)
 
         do {
             try fetchedResultsController.performFetch()

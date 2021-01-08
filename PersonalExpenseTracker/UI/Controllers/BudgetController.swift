@@ -71,7 +71,7 @@ class BudgetController: UITableViewController, NSFetchedResultsControllerDelegat
             try fetchedResultsController.performFetch()
 
             // set total & max budget
-            totalBudget = Facade.share.model.getTotalBudget()
+            totalBudget = Facade.share.model.calculateTotalBudget()
             maxBudget = Facade.share.model.getMaxAmountInBudget()
 
             tableView.reloadData()

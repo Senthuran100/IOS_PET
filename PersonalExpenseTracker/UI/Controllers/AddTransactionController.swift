@@ -84,7 +84,7 @@ Go to Settings > Categories and add an 'Income' category.
             model.expenseIndex = 0
         }
 
-        if let record = Facade.share.model.getRecord(uid: currentUid) {
+        if let record = Facade.share.model.fetchRecord(uid: currentUid) {
             self.record = record
 
             let formatter = NumberFormatter()
@@ -253,7 +253,7 @@ Go to Settings > Categories and add an 'Income' category.
         if model.uid == "" || model.uid == nil {
             // new record
             record = Records(context: Facade.share.model.container.viewContext)
-            record.uid = Facade.share.model.getNewUID()
+            record.uid = Facade.share.model.getUID()
         }
 
         if model.direction == 0 {

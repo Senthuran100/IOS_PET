@@ -10,15 +10,15 @@ import Foundation
 class ReportModel {
 
     // swiftlint:disable:next function_body_length
-    static func monthlyOveralInfo() -> [SWMonthlyOverall] {
+    static func monthlyOveralInfo() -> [PETMonthlyOverall] {
         let model = Facade.share.model
 
-        let (minDate, maxDate) = model.getMinMaxDateInRecords()
+        let (minDate, maxDate) = model.retrieveMinMaxDateInRecords()
         let monthYearList = Date.monthsBetweenDates(
             startDate: minDate,
             endDate: maxDate
         )
-        let totalBudget = model.getTotalBudget()
+        let totalBudget = model.calculateTotalBudget()
 
         return monthYearList.compactMap {
             let numDays = Date.getMonthDuration(
@@ -32,14 +32,14 @@ class ReportModel {
                 considerCurrent: false
             )
 
-            let monthlyTotalCost = model.getTotalMonth(
+            let monthlyTotalCost = model.retrieveTotalMonth(
                 year: $0.year,
                 month: $0.month,
                 type: .cost
             )
             let dailyAverageCost = monthlyTotalCost / Double(numDays)
 
-            let monthlyTotalIncome = model.getTotalMonth(
+            let monthlyTotalIncome = model.retrieveTotalMonth(
                 year: $0.year,
                 month: $0.month,
                 type: .income
@@ -117,18 +117,18 @@ class ReportModel {
                 recordType: .income
             ))
 
-            return SWMonthlyOverall(month: $0, items: items)
+            return PETMonthlyOverall(month: $0, items: items)
         }
     }
 }
 
-struct SWMonthlyOverall {
+struct PETMonthlyOverall {
     let month: PETMonth
     var items: [SWRecordRepresentation]
 }
 
 struct SWRecordRepresentation {
-    let type: SWRepresentationType
+    let type: PETRepresentationType
     let value: Double
     let recordType: RecordType
 
@@ -137,7 +137,7 @@ struct SWRecordRepresentation {
     }
 }
 
-enum SWRepresentationType: String {
+enum PETRepresentationType: String {
     case totalCost = "Sum of Expenses"
     case totalIncome = "Sum of Income"
     case total = "Net Amount"

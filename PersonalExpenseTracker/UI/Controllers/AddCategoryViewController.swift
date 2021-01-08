@@ -42,14 +42,14 @@ class AddCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        category = Facade.share.model.getOrCreateCategory(uid: currentUid)
+        category = Facade.share.model.addOrGetCategory(uid: currentUid)
         var defaultDirection = UserDefaults.standard.integer(forKey: "DirectionInAddCategories")
         if category.uid == "" {
             // default initialisation for new category
             self.currentIcon = FontAwesome.stream
         } else {
             // manipulate fields with current object data
-            self.currentIcon = FontAwesome(rawValue: category.icon!)
+            self.currentIcon = FontAwesome(rawValue: category.icon ?? "nil")
             categoryNameInput.text = category.name
             if category.direction == 1 {
                 defaultDirection = 1
@@ -69,7 +69,7 @@ class AddCategoryViewController: UIViewController {
         }
 
         if category.uid == "" {
-            category.uid = Facade.share.model.getNewUID()
+            category.uid = Facade.share.model.getUID()
         }
 
         if categoryTypeInput.selectedSegmentIndex == 0 {

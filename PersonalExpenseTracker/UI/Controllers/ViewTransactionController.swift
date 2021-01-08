@@ -38,7 +38,7 @@ class ViewTransactionController: UIViewController {
     }
     
     private func dataFilling() {
-        guard let record = Facade.share.model.getRecord(uid: currentUid) else {
+        guard let record = Facade.share.model.fetchRecord(uid: currentUid) else {
             return
         }
         self.record = record

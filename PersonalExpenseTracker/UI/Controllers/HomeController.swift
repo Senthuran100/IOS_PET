@@ -48,7 +48,7 @@ class HomeController: UITableViewController {
         StoreReviewHelper.checkAndAskForReview()
 
         configureSegmentedView()
-        totalBudget = Facade.share.model.getTotalBudget()
+        totalBudget = Facade.share.model.calculateTotalBudget()
 
         calculateOveralInfo()
         calculateCostInfo()
@@ -96,7 +96,7 @@ class HomeController: UITableViewController {
         lineChartView?.moveViewToX(lineChartView?.chartXMax ?? 0)
     }
 
-    private func provideLineData(type: SWRepresentationType) -> LineChartDataSet {
+    private func provideLineData(type: PETRepresentationType) -> LineChartDataSet {
         var mainColor: UIColor = .black
         var gradientFirstColor: UIColor = .clear
         var gradientSecondColor: UIColor = .black
@@ -170,10 +170,10 @@ class HomeController: UITableViewController {
         let numDays = Date.getMonthDuration(year: currentYear, month: currentMonth, considerCurrent: true)
         let numDaysAll =  Date.getMonthDuration(year: currentYear, month: currentMonth, considerCurrent: false)
 
-        let monthlyTotalCost = Facade.share.model.getTotalMonth(year: currentYear, month: currentMonth, type: .cost)
+        let monthlyTotalCost = Facade.share.model.retrieveTotalMonth(year: currentYear, month: currentMonth, type: .cost)
         let dailyAverageCost = monthlyTotalCost / Double(numDays)
 
-        let monthlyTotalIncome = Facade.share.model.getTotalMonth(year: currentYear,
+        let monthlyTotalIncome = Facade.share.model.retrieveTotalMonth(year: currentYear,
                                                                   month: currentMonth,
                                                                   type: .income)
         let dailyAverageIncome = monthlyTotalIncome / Double(numDays)
@@ -244,7 +244,7 @@ class HomeController: UITableViewController {
     func calculateCostInfo() {
         costInfo.removeAll()
         budgetInfo.removeAll()
-        let catWithCost = Facade.share.model.getMonthlyTotalByCategory(year: currentYear,
+        let catWithCost = Facade.share.model.groupCategoryByMonthlyTotal(year: currentYear,
                                                                        month: currentMonth,
                                                                        type: .cost)
         for result in catWithCost {
@@ -260,7 +260,7 @@ class HomeController: UITableViewController {
 
     func calculateIncomeInfo() {
         incomeInfo.removeAll()
-        let catWithCost = Facade.share.model.getMonthlyTotalByCategory(year: currentYear,
+        let catWithCost = Facade.share.model.groupCategoryByMonthlyTotal(year: currentYear,
                                                                        month: currentMonth,
                                                                        type: .income)
         for result in catWithCost {
@@ -368,7 +368,7 @@ class HomeController: UITableViewController {
     }
 
     private func segmentioContent() -> [SegmentioItem] {
-        let (minDate, maxDate) = Facade.share.model.getMinMaxDateInRecords()
+        let (minDate, maxDate) = Facade.share.model.retrieveMinMaxDateInRecords()
         self.monthYearList = Date.monthsBetweenDates(
             startDate: minDate,
             endDate: maxDate)
@@ -421,7 +421,7 @@ class HomeController: UITableViewController {
         self.currentYear = currentYear
         self.currentMonth = currentMonth
 
-        self.totalBudget = Facade.share.model.getTotalBudget()
+        self.totalBudget = Facade.share.model.calculateTotalBudget()
         self.currencyLabel = NSLocale.defaultCurrency
 
         self.calculateOveralInfo()

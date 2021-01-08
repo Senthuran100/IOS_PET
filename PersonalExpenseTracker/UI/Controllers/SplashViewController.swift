@@ -21,22 +21,22 @@ class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
 
-        let theURL = Bundle.main.url(forResource: "intro", withExtension: "mp4")
-
-        avPlayer = AVPlayer(url: theURL!)
-        avPlayerLayer = AVPlayerLayer(player: avPlayer)
-        avPlayerLayer.videoGravity = .resizeAspectFill
-        avPlayer.volume = 0
-        avPlayer.actionAtItemEnd = .none
-
-        avPlayerLayer.frame = view.layer.bounds
+//        let theURL = Bundle.main.url(forResource: "intro", withExtension: "mp4")
+//
+//        avPlayer = AVPlayer(url: theURL!)
+//        avPlayerLayer = AVPlayerLayer(player: avPlayer)
+//        avPlayerLayer.videoGravity = .resizeAspectFill
+//        avPlayer.volume = 0
+//        avPlayer.actionAtItemEnd = .none
+//
+//        avPlayerLayer.frame = view.layer.bounds
         view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
-        view.layer.insertSublayer(avPlayerLayer, at: 0)
+//        view.layer.insertSublayer(avPlayerLayer, at: 0)
 
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(playerItemDidReachEnd(notification:)),
-                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
-                                               object: avPlayer.currentItem)
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(playerItemDidReachEnd(notification:)),
+//                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+//                                               object: avPlayer.currentItem)
 
         // set observer for UIApplicationWillEnterForeground
         NotificationCenter.default.addObserver(self,
@@ -54,19 +54,19 @@ class SplashViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        avPlayer.play()
+//        avPlayer.play()
         paused = false
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        avPlayer.pause()
+//        avPlayer.pause()
         paused = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        avPlayer.play()
+//        avPlayer.play()
         paused = false
     }
 
