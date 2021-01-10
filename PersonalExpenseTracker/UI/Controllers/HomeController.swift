@@ -1,5 +1,5 @@
 //
-//  DashboardViewController.swift
+//  HomeController.swift
 //  PersonalExpenseTracker
 //
 //  Created by Senthuran on 12/20/20.
@@ -10,8 +10,6 @@ import Segmentio
 import CoreData
 import Charts
 
-// swiftlint:disable file_length
-// swiftlint:disable:next type_body_length
 class HomeController: UITableViewController {
     private var lineChartView: LineChartView?
     private var segmentioView: Segmentio?
@@ -45,8 +43,6 @@ class HomeController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-//        StoreReviewHelper.checkAndAskForReview()
-
         configureSegmentedView()
         totalBudget = Facade.share.model.calculateTotalBudget()
 
@@ -58,6 +54,7 @@ class HomeController: UITableViewController {
         tableView.reloadData()
     }
 
+    // Method that is used for the configuration of the chart.
     private func configureChart() {
         lineChartView = LineChartView(frame: CGRect(x: 0, y: 60, width: self.view.frame.width, height: 200))
 
@@ -165,6 +162,7 @@ class HomeController: UITableViewController {
         }
     }
 
+    // function that is used to display overall info in home screen.
     func calculateOveralInfo() {
         overalInfo.removeAll()
 
@@ -174,9 +172,7 @@ class HomeController: UITableViewController {
         let monthlyTotalCost = Facade.share.model.retrieveTotalMonth(year: currentYear, month: currentMonth, type: .cost)
         let dailyAverageCost = monthlyTotalCost / Double(numDays)
 
-        let monthlyTotalIncome = Facade.share.model.retrieveTotalMonth(year: currentYear,
-                                                                  month: currentMonth,
-                                                                  type: .income)
+        let monthlyTotalIncome = Facade.share.model.retrieveTotalMonth(year: currentYear,month: currentMonth,type: .income)
         let dailyAverageIncome = monthlyTotalIncome / Double(numDays)
 
         let monthlyTotal = monthlyTotalIncome - monthlyTotalCost
@@ -245,15 +241,12 @@ class HomeController: UITableViewController {
     func calculateCostInfo() {
         costInfo.removeAll()
         budgetInfo.removeAll()
-        let catWithCost = Facade.share.model.groupCategoryByMonthlyTotal(year: currentYear,
-                                                                       month: currentMonth,
-                                                                       type: .cost)
+        let catWithCost = Facade.share.model.groupCategoryByMonthlyTotal(year: currentYear,month: currentMonth,type: .cost)
         for result in catWithCost {
             costInfo.append((
                 label: result.category.name!,
                 value: result.amount.recordPresenter(for: .cost)
             ))
-            
             
             budgetInfo.append((amount: result.amount, budget: result.category.budget))
         }
@@ -261,9 +254,7 @@ class HomeController: UITableViewController {
 
     func calculateIncomeInfo() {
         incomeInfo.removeAll()
-        let catWithCost = Facade.share.model.groupCategoryByMonthlyTotal(year: currentYear,
-                                                                       month: currentMonth,
-                                                                       type: .income)
+        let catWithCost = Facade.share.model.groupCategoryByMonthlyTotal(year: currentYear,month: currentMonth,type: .income)
         for result in catWithCost {
             incomeInfo.append((
                 label: result.category.name!,

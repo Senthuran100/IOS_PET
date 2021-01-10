@@ -93,6 +93,7 @@ extension Date {
         return dateFormatter.date(from: dateString)!
     }
 
+    //method that is used to get the duration of month.
     static func getDurationOfMonth(year: Int,
                           month: Int,
                           considerCurrent: Bool,

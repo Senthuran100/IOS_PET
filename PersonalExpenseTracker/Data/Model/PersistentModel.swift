@@ -230,7 +230,8 @@ class PersistentModel {
 
         saveContext()
     }
-
+    
+    // get the expense or income according to the line no 246 query.
     func retrieveTotalMonth(year: Int, month: Int, type: RecordType) -> Double {
         do {
             let fetchRequest: NSFetchRequest<Records> = Records.createFetchRequest()
