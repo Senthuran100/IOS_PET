@@ -165,11 +165,14 @@ class TransactionController: UITableViewController, NSFetchedResultsControllerDe
 
         if fetchedResultsController.fetchedObjects?.count == 0 {
             let coverImage = UIImage(named: "AddFirstRecord")!
+            
             coverImageView.image = coverImage
             coverImageView.contentMode = .scaleAspectFit
             coverImageView.frame = CGRect(x: 20, y: 5, width: tableView.frame.width-20, height: 300)
+            coverImageView.startAnimating()
             view.addSubview(coverImageView)
-
+            
+            
         } else {
             DispatchQueue.main.async {
                 self.coverImageView.removeFromSuperview()

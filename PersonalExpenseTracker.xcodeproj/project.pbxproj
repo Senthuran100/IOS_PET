@@ -28,7 +28,6 @@
 		64DE896A258F1FA1003E3486 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8969258F1FA1003E3486 /* CategoryController.swift */; };
 		64DE896F258F1FB2003E3486 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE896E258F1FB2003E3486 /* AddCategoryViewController.swift */; };
 		64DE8974258F1FC8003E3486 /* SelectCurrecncyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8973258F1FC8003E3486 /* SelectCurrecncyController.swift */; };
-		64DE897A258F1FE4003E3486 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8979258F1FE4003E3486 /* SplashViewController.swift */; };
 		64DE8982258F1FFC003E3486 /* PETIconSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8981258F1FFC003E3486 /* PETIconSelectorController.swift */; };
 		64DE898A258F21D6003E3486 /* Facade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8989258F21D6003E3486 /* Facade.swift */; };
 		64DE89AA258F255F003E3486 /* SWRecordHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64DE89A9258F255F003E3486 /* SWRecordHeaderView.xib */; };
@@ -48,7 +47,6 @@
 		64DE89FE258F2915003E3486 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64DE89FA258F2915003E3486 /* Font Awesome 5 Free-Regular-400.otf */; };
 		64DE8A07258F5CED003E3486 /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A06258F5CED003E3486 /* ReportModel.swift */; };
 		64DE8A0C258F5D00003E3486 /* PETMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A0B258F5D00003E3486 /* PETMonth.swift */; };
-		64DE8A11258F5D12003E3486 /* StoreReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A10258F5D12003E3486 /* StoreReviewHelper.swift */; };
 		64DE8A16258F5D23003E3486 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A15258F5D23003E3486 /* Currency.swift */; };
 		64DE8A1B258F5D33003E3486 /* AddModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A1A258F5D33003E3486 /* AddModel.swift */; };
 		64DE8A20258F5D44003E3486 /* PETAppStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DE8A1F258F5D44003E3486 /* PETAppStatus.swift */; };
@@ -116,7 +114,6 @@
 		64DE8969258F1FA1003E3486 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
 		64DE896E258F1FB2003E3486 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		64DE8973258F1FC8003E3486 /* SelectCurrecncyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCurrecncyController.swift; sourceTree = "<group>"; };
-		64DE8979258F1FE4003E3486 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		64DE8981258F1FFC003E3486 /* PETIconSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETIconSelectorController.swift; sourceTree = "<group>"; };
 		64DE8989258F21D6003E3486 /* Facade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facade.swift; sourceTree = "<group>"; };
 		64DE89A9258F255F003E3486 /* SWRecordHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SWRecordHeaderView.xib; sourceTree = "<group>"; };
@@ -136,7 +133,6 @@
 		64DE89FA258F2915003E3486 /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		64DE8A06258F5CED003E3486 /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
 		64DE8A0B258F5D00003E3486 /* PETMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETMonth.swift; sourceTree = "<group>"; };
-		64DE8A10258F5D12003E3486 /* StoreReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewHelper.swift; sourceTree = "<group>"; };
 		64DE8A15258F5D23003E3486 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		64DE8A1A258F5D33003E3486 /* AddModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModel.swift; sourceTree = "<group>"; };
 		64DE8A1F258F5D44003E3486 /* PETAppStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETAppStatus.swift; sourceTree = "<group>"; };
@@ -270,7 +266,6 @@
 				64DE8969258F1FA1003E3486 /* CategoryController.swift */,
 				64DE896E258F1FB2003E3486 /* AddCategoryViewController.swift */,
 				64DE8973258F1FC8003E3486 /* SelectCurrecncyController.swift */,
-				64DE8979258F1FE4003E3486 /* SplashViewController.swift */,
 				64DE8981258F1FFC003E3486 /* PETIconSelectorController.swift */,
 			);
 			path = Controllers;
@@ -332,7 +327,6 @@
 				64DE8A2E258F5E1F003E3486 /* Extensions */,
 				64DE8A06258F5CED003E3486 /* ReportModel.swift */,
 				64DE8A0B258F5D00003E3486 /* PETMonth.swift */,
-				64DE8A10258F5D12003E3486 /* StoreReviewHelper.swift */,
 				64DE8A15258F5D23003E3486 /* Currency.swift */,
 				64DE8A1A258F5D33003E3486 /* AddModel.swift */,
 				64DE8A1F258F5D44003E3486 /* PETAppStatus.swift */,
@@ -646,7 +640,6 @@
 				64DE8965258F1F8F003E3486 /* SettingController.swift in Sources */,
 				64DE8A2A258F5D6B003E3486 /* PETAppConfig.swift in Sources */,
 				64DE8A73258F5FC4003E3486 /* PersistentModel.swift in Sources */,
-				64DE8A11258F5D12003E3486 /* StoreReviewHelper.swift in Sources */,
 				64DE8A7D258F5FE6003E3486 /* RecordsExtensions.swift in Sources */,
 				64DE89D0258F27E6003E3486 /* UICollection+Extensions.swift in Sources */,
 				64DE894E258F1F07003E3486 /* TransactionController.swift in Sources */,
@@ -662,7 +655,6 @@
 				64DE8A38258F5E4F003E3486 /* DateFormatter+Extensions.swift in Sources */,
 				64DE8A07258F5CED003E3486 /* ReportModel.swift in Sources */,
 				64DE89CA258F27B1003E3486 /* Style+MyApp.swift in Sources */,
-				64DE897A258F1FE4003E3486 /* SplashViewController.swift in Sources */,
 				64DE8A16258F5D23003E3486 /* Currency.swift in Sources */,
 				64DE89D9258F284A003E3486 /* TransactionTableViewCell.swift in Sources */,
 				64DE898A258F21D6003E3486 /* Facade.swift in Sources */,
