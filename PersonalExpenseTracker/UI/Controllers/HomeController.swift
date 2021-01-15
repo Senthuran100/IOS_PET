@@ -206,11 +206,11 @@ class HomeController: UITableViewController {
             dailyAverage.recordPresenter(for: .all)
         ))
         overalInfo.append((
-            "Daily Average Expenses",
+            "Ave. Expenses",
             dailyAverageCost.recordPresenter(for: .cost)
         ))
         overalInfo.append((
-            "Daily Average Income",
+            "Ave. Income",
             dailyAverageIncome.recordPresenter(for: .income)
         ))
 
@@ -219,19 +219,19 @@ class HomeController: UITableViewController {
 
             let monthlyForecast = dailyAverage * Double(numDaysAll)
             overalInfo.append((
-                "Monthly Prediction",
+                "Prediction",
                 monthlyForecast.recordPresenter(for: .all)
             ))
 
             let monthlyForecastCost = dailyAverageCost * Double(numDaysAll)
             overalInfo.append((
-                "Predicted Expenses",
+                "Pre.Expenses",
                 monthlyForecastCost.recordPresenter(for: .cost)
             ))
 
             let monthlyForecastIncome = dailyAverageIncome * Double(numDaysAll)
             overalInfo.append((
-                "Predicted Income",
+                "Pre.Income",
                 monthlyForecastIncome.recordPresenter(for: .income)
             ))
         }
