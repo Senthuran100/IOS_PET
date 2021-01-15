@@ -181,9 +181,9 @@ class TransactionController: UITableViewController, NSFetchedResultsControllerDe
             coverImageView.animationImages = animatedImages(for: "animation")
             coverImageView.contentMode = .scaleAspectFit
             coverImageView.frame = CGRect(x: 20, y: 5, width: tableView.frame.width-20, height: 300)
-            coverImageView.animationDuration = 1
+            coverImageView.animationDuration = 2
             coverImageView.animationRepeatCount = 3
-            coverImageView.image = coverImageView.animationImages?.first
+            coverImageView.image = UIImage(named: "AddFirstRecord")
             coverImageView.startAnimating()
             view.addSubview(coverImageView)
             
