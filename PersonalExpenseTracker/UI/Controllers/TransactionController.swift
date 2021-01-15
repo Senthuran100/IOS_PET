@@ -159,16 +159,31 @@ class TransactionController: UITableViewController, NSFetchedResultsControllerDe
         }
 
     }
+    
+    func animatedImages(for name: String) -> [UIImage] {
+        
+        var i = 0
+        var images = [UIImage]()
+        
+        while let image = UIImage(named: "\(name)_\(i)") {
+            images.append(image)
+            i += 1
+        }
+        return images
+    }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
         if fetchedResultsController.fetchedObjects?.count == 0 {
-            let coverImage = UIImage(named: "AddFirstRecord")!
+            _ = UIImageView()
             
-            coverImageView.image = coverImage
+            coverImageView.animationImages = animatedImages(for: "animation")
             coverImageView.contentMode = .scaleAspectFit
             coverImageView.frame = CGRect(x: 20, y: 5, width: tableView.frame.width-20, height: 300)
+            coverImageView.animationDuration = 1
+            coverImageView.animationRepeatCount = 3
+            coverImageView.image = coverImageView.animationImages?.first
             coverImageView.startAnimating()
             view.addSubview(coverImageView)
             
